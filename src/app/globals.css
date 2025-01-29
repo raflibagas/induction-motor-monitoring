@@ -3,19 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc; /* Light gray background */
+  --foreground: #1e293b; /* Dark text color */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f8fafc; /* Keep same background for dark mode */
+    --foreground: #1e293b; /* Keep same text for dark mode */
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #ffd6e6 0%,
+    #ffffff 35%,
+    #ffffff 65%,
+    #a8ede7 100%
+  );
+  background-image: radial-gradient(
+      at top right,
+      rgba(255, 214, 230, 0.8) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      at bottom left,
+      rgba(168, 237, 231, 0.8) 0%,
+      transparent 70%
+    );
+  background-attachment: fixed;
+}
+
+/* Optional: Add styles for the main container */
+main {
+  width: 100%;
+  padding: 2rem; /* Add some padding to the content */
 }
